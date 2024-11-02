@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: websiteimage
+spec:
+  replicas: 5
+  selector:
+    matchLabels: 
+     app: websiteimage
+  template:
+    metadata:
+     labels: 
+       app: websiteimage
+     spec:
+       containers:
+      - name: website
+         image: rohiteng90/websiteimage
+         ports:
+         - containerPort : 80
